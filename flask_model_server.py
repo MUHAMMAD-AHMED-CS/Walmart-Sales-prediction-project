@@ -24,7 +24,7 @@ mail = Mail(app)
 current_directory = os.path.dirname(os.path.realpath(__file__))
 
 # Load the pre-trained model
-model_path = os.path.join(current_directory, 'trained_mode2.pkl')
+model_path = os.path.join(current_directory, 'trained_model2.pkl')
 model = joblib.load(model_path)
 
 
