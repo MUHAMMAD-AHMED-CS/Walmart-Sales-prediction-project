@@ -12,13 +12,13 @@ The first part of the script is designed to download and copy the requirements.z
 
 ## Usage
 
-# Part-1:
+### Part-1:
 The script can be used to:
 1. Download the requirements.zip form the specified scouce.
 2. unzip the requirements.zip.
 3. Copy the content in the requirements.zip to designated hosts in this case SOC_A and SOC_B.
 
-# Part-2:
+### Part-2:
 The script can be used to:
 1. Fetch and display a list of available branches from the repository.
 2. Clone a specified branch from the repository.
@@ -32,17 +32,17 @@ chmod +x calibartion_req.sh
 ```
 You can run the script by passing a branch name as an argument, or without any arguments to be prompted for a branch name.
 
-## With a Branch Name
+#### With a Branch Name
 
 ```bash
 ./calibartion_req.sh <branch_name>
 ```
-## Example:
+#### Example:
 
 ```bash
 ./calibartion_req.sh main
 ```
-## Without a Branch Name
+#### Without a Branch Name
 ```bash
 ./calibartion_req.sh
 ```
@@ -51,13 +51,13 @@ If no branch name is provided, the script will fetch and display a list of avail
 
 ## Script Details Part-1 for requirements.zip downloading and copying on the SOCs.
 
-# Variables
+### Variables
 - URL: Placeholder for the URL to download the required file (commented out in this script).
 - file_name: The name of the file to be downloaded (commented out in this script).
 - extracted_dir: The directory where the downloaded file will be extracted (commented out in this script).
 
 
-# Downloading the File (Commented Out)
+### Downloading the File (Commented Out)
 
 ```bash
 
@@ -77,7 +77,7 @@ If no branch name is provided, the script will fetch and display a list of avail
  fi
 
 ```
-## Copying the Files
+### Copying the Files
 The script copies the opencv.hpp file to two specified hosts using sshpass:
 
 ```bash
@@ -109,7 +109,7 @@ fetch_branch_list() {
     git ls-remote --heads $repository_url | awk -F '/' '{print $NF}'
 }
 ```
-## Cloning a Branch
+### Cloning a Branch
 If a branch name is provided, the script clones that specific branch into a folder named after the repository:
 
 ```bash
@@ -119,7 +119,7 @@ git clone -b $branch_name --single-branch $repository_url $destination_folder
 ```
 If cloning is successful, it prints a success message; otherwise, it prints an error message.
 
-# Copying the Cloned Repository
+### Copying the Cloned Repository
 The script copies the cloned repository to the specified hosts using sshpass:
 
 ```bash
